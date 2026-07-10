@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MainCraftPortal</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #1a1a2e;
+    color: #e0e0e0;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    background: linear-gradient(135deg, #2d5016 0%, #4a7c23 50%, #2d5016 100%);
+    width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 4px solid #8b6b3d;
+    position: relative;
+    overflow: hidden;
+}
+header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        0deg, transparent, transparent 4px, rgba(0,0,0,0.1) 4px, rgba(0,0,0,0.1) 8px
+    );
+}
+header h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 3px 3px 0 #2d5016, -1px -1px 0 #5a8f3c;
+    position: relative;
+    letter-spacing: 2px;
+}
+header p {
+    font-size: 1.1rem;
+    color: #c8e6c9;
+    margin-top: 0.5rem;
+    position: relative;
+}
+main { max-width: 800px; padding: 2rem 1rem; width: 100%; }
+section { margin-bottom: 2.5rem; }
+h2 {
+    font-size: 1.5rem;
+    color: #8bc34a;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #333;
+}
+.downloads { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: #fff;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+.btn-win { background: linear-gradient(135deg, #1565c0, #1976d2); }
+.btn-linux { background: linear-gradient(135deg, #e65100, #f57c00); }
+.btn-gh { background: #333; }
+.btn::before {
+    font-size: 1.3rem;
+}
+.btn-win::before { content: '⬇'; }
+.btn-linux::before { content: '⬇'; }
+.btn-gh::before { content: '▶'; }
+.badge {
+    display: inline-block;
+    background: #8bc34a;
+    color: #1a1a2e;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+.features { list-style: none; }
+.features li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.features li::before {
+    content: '✔';
+    color: #8bc34a;
+    position: absolute;
+    left: 0;
+}
+code {
+    background: #2d2d44;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #c8e6c9;
+}
+pre {
+    background: #2d2d44;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid #333;
+}
+.steps { counter-reset: step; list-style: none; }
+.steps li {
+    counter-increment: step;
+    padding: 0.75rem 0;
+    padding-left: 2.5rem;
+    position: relative;
+}
+.steps li::before {
+    content: counter(step);
+    background: #4a7c23;
+    color: #fff;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0.8rem;
+}
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+    margin-top: auto;
+}
+footer a { color: #8bc34a; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>⛏ MainCraftPortal</h1>
+    <p>Один клик — и твой Minecraft сервер доступен друзьям</p>
+</header>
+
+<main>
+    <section>
+        <h2>О проекте</h2>
+        <p>MainCraftPortal — десктопное приложение для Windows и Linux, которое автоматически:</p>
+        <ul class="features">
+            <li>Скачивает и запускает Minecraft сервер нужной версии</li>
+            <li>Создаёт публичный туннель через playit.gg</li>
+            <li>Показывает адрес — копируешь и скидываешь друзьям</li>
+            <li>Работает с пиратскими клиентами (online-mode=false)</li>
+            <li>Никаких настроек, портов, accounts — всё само</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Скачать</h2>
+        <div class="downloads">
+            <a class="btn btn-win" href="https://github.com/pokalo/minecraft-server/releases/latest/download/MainCraftPortal.exe">
+                Windows <span class="badge">EXE</span>
+            </a>
+            <a class="btn btn-linux" href="https://github.com/pokalo/minecraft-server?tab=readme-ov-file#linux-%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C">
+                Linux <span class="badge">CLI</span>
+            </a>
+        </div>
+        <p style="text-align:center;margin-top:1rem;font-size:0.9rem;color:#888;">
+            Windows 10+ / .NET 9 Runtime &middot; Linux / .NET 9 + Java 21
+        </p>
+    </section>
+
+    <section>
+        <h2>Как использовать</h2>
+        <ol class="steps">
+            <li>Скачай и запусти <strong>MainCraftPortal.exe</strong></li>
+            <li>Нажми <strong>«Сервер»</strong></li>
+            <li>Выбери версию Minecraft (по умолчанию последняя совместимая)</li>
+            <li>Подожди — программа скачает сервер, запустит его и создаст туннель</li>
+            <li>Скопируй адрес из зелёной панели и разошли друзьям</li>
+            <li>Нажми <strong>«Остановить»</strong> когда наигрались</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Первый запуск</h2>
+        <p>При первом запуске откроется браузер с сайтом <strong>playit.gg</strong>:</p>
+        <ol class="steps">
+            <li>Подтверди создание агента на сайте</li>
+            <li>Вернись в приложение — ключ сохранится автоматически</li>
+            <li>В следующий раз ключ не понадобится</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Linux (консоль)</h2>
+        <pre>sudo apt install dotnet-runtime-9.0 openjdk-21-jre-headless
+git clone https://github.com/pokalo/minecraft-server
+cd minecraft-server/MainCraftPortal.CLI
+dotnet publish -c Release -r linux-x64 -o publish
+./publish/MainCraftPortal</pre>
+        <p>Нажми <kbd>Ctrl+C</kbd> для остановки.</p>
+    </section>
+
+    <section>
+        <h2>Исходный код</h2>
+        <div class="downloads">
+            <a class="btn btn-gh" href="https://github.com/pokalo/minecraft-server">
+                GitHub (основной репозиторий)
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Сделано с ❤ для Minecraft-друзей</p>
+    <p><a href="https://github.com/pokalo/maincraft-portal">Сайт на GitHub Pages</a></p>
+</footer>
+
+</body>
+</html>

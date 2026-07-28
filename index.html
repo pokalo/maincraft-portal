@@ -146,6 +146,30 @@ footer {
     margin-top: auto;
 }
 footer a { color: #8bc34a; text-decoration: none; }
+.donate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.donate-card {
+    background: #2d2d44;
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 1.2rem 0.8rem;
+    text-align: center;
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.donate-card:hover {
+    transform: translateY(-3px);
+    border-color: #8bc34a;
+    box-shadow: 0 4px 20px rgba(139,195,74,0.2);
+}
+.donate-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.donate-name { font-weight: bold; font-size: 1rem; margin-bottom: 0.3rem; }
+.donate-desc { font-size: 0.8rem; color: #888; }
 </style>
 </head>
 <body>
@@ -185,6 +209,38 @@ footer a { color: #8bc34a; text-decoration: none; }
             Windows 10+ / .NET 9 Runtime &middot; Linux / .NET 9 + Java 21
         </p>
         <div style="text-align:center;margin-top:1rem;" data-banner-id="2024795"></div>
+    </section>
+
+    <section>
+        <h2>Поддержать проект</h2>
+        <p style="text-align:center;margin-bottom:1.5rem;color:#aaa;">Если MainCraftPortal тебе полезен — можешь закинуть на кофе ☕</p>
+        <div class="donate-grid">
+            <a class="donate-card" href="https://www.donationalerts.com/r/maincraftportal" target="_blank" rel="noopener">
+                <div class="donate-icon">🔴</div>
+                <div class="donate-name">DonationAlerts</div>
+                <div class="donate-desc">Карта, ЮMoney, VK Pay</div>
+            </a>
+            <a class="donate-card" href="https://boosty.to/maincraftportal/donate" target="_blank" rel="noopener">
+                <div class="donate-icon">🟡</div>
+                <div class="donate-name">Boosty</div>
+                <div class="donate-desc">Подписка или донат</div>
+            </a>
+            <a class="donate-card" href="https://yoomoney.ru/to/4100117861836659" target="_blank" rel="noopener">
+                <div class="donate-icon">🔵</div>
+                <div class="donate-name">ЮMoney</div>
+                <div class="donate-desc">Прямой перевод</div>
+            </a>
+            <a class="donate-card" href="https://t.me/MainCraftPortalBot" target="_blank" rel="noopener">
+                <div class="donate-icon">✈️</div>
+                <div class="donate-name">Tribute</div>
+                <div class="donate-desc">Через Telegram</div>
+            </a>
+            <a class="donate-card" href="https://vk.com/clubmaincraftportal/donate" target="_blank" rel="noopener">
+                <div class="donate-icon">🟦</div>
+                <div class="donate-name">VK Donut</div>
+                <div class="donate-desc">Подписка ВКонтакте</div>
+            </a>
+        </div>
     </section>
 
     <section>
